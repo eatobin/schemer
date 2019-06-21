@@ -2,7 +2,17 @@
 
 (defun rember (a lat)
   (cond
-    ((null lat) (quote ()))
+    ((null lat) nil)
     ((eq (car lat) a) (cdr lat))
     (t (cons (car lat) (rember a (cdr lat))))))
 
+(defun firsts (l)
+  (cond
+    ((null l) nil)
+    (t (cons (car (car l)) (firsts (cdr l))))))
+
+(defun insertR (new old lat)
+  (cond
+    ((null lat) nil)
+    ((eq (car lat) old) (cons (car lat) (cons new (cdr lat))))
+    (t (cons (car lat) (insertR new old (cdr lat))))))
