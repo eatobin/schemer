@@ -5,6 +5,7 @@
 (provide rember)
 (provide firsts)
 (provide insertR)
+(provide insertL)
 
 (define rember
   (lambda (a lat)
