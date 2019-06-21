@@ -1,12 +1,12 @@
 (load (compile-file "ch2.lisp"))
 
-(defun lat? (l)
+(defun lat2? (l)
   (cond
     ((null l) t)
     ((atom? (car l)) (lat? (cdr l)))
     (t nil)))
 
-(defun member? (a lat)
+(defun member2? (a lat)
   (cond
     ((null lat) nil)
     (t (or (eq (car lat) a)
