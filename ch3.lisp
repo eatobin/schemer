@@ -28,3 +28,9 @@
     ((null lat) nil)
     ((eq (car lat) old) (cons new (cdr lat)))
     (t (cons (car lat) (substCL new old (cdr lat))))))
+
+(defun substCL2 (new o1 o2 lat)
+  (cond
+    ((null lat) nil)
+    ((or (eq (car lat) o1) (eq (car lat) o2)) (cons new (cdr lat)))
+    (t (cons (car lat) (substCL2 new o1 o2 (cdr lat))))))
