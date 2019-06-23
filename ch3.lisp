@@ -22,3 +22,9 @@
     ((null lat) nil)
     ((eq (car lat) old) (cons new lat))
     (t (cons (car lat) (insertL new old (cdr lat))))))
+
+(defun substCL (new old lat)
+  (cond
+    ((null lat) nil)
+    ((eq (car lat) old) (cons new (cdr lat)))
+    (t (cons (car lat) (substCL new old (cdr lat))))))
