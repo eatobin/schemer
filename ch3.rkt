@@ -1,5 +1,6 @@
 #lang racket
 
+(require "ch1.rkt")
 (require "ch2.rkt")
 
 (provide rember)
