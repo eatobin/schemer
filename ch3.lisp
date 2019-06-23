@@ -1,24 +1,36 @@
 (load (compile-file "ch2.lisp"))
 
-(defun lat2? (l)
-  (cond
-    ((null l) t)
-    ((atom? (car l)) (lat? (cdr l)))
-    (t nil)))
-
-(defun member2? (a lat)
+(defun rember (a lat)
   (cond
     ((null lat) nil)
-    (t (or (eq (car lat) a)
-           (member? a (cdr lat))))))
+    ((eq (car lat) a) (cdr lat))
+    (t (cons (car lat) (rember a (cdr lat))))))
 
-(lat? '())
-(lat? '(8))
-(lat? '(8 (8)))
+(defun firsts (l)
+  (cond
+    ((null l) nil)
+    (t (cons (car (car l)) (firsts (cdr l))))))
 
-(member? :a '())
-(member? :a '(:a))
-(member? :a '(:ax))
-(member? :a '(:ax :a))
-(member? 'dog '(cat dog))
-(member? 'dog '(cat dogg))
+(defun insertR (new old lat)
+  (cond
+    ((null lat) nil)
+    ((eq (car lat) old) (cons (car lat) (cons new (cdr lat))))
+    (t (cons (car lat) (insertR new old (cdr lat))))))
+
+(defun insertL (new old lat)
+  (cond
+    ((null lat) nil)
+    ((eq (car lat) old) (cons new lat))
+    (t (cons (car lat) (insertL new old (cdr lat))))))
+
+(defun substCL (new old lat)
+  (cond
+    ((null lat) nil)
+    ((eq (car lat) old) (cons new (cdr lat)))
+    (t (cons (car lat) (substCL new old (cdr lat))))))
+
+(defun substCL2 (new o1 o2 lat)
+  (cond
+    ((null lat) nil)
+    ((or (eq (car lat) o1) (eq (car lat) o2)) (cons new (cdr lat)))
+    (t (cons (car lat) (substCL2 new o1 o2 (cdr lat))))))

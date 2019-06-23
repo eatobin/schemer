@@ -9,8 +9,8 @@
 (defun member? (a lat)
   (cond
     ((null lat) nil)
-    (t (or (eq (car lat) a)
-           (member? a (cdr lat))))))
+    ((eq (car lat) a) t)
+    (t (member? a (cdr lat)))))
 
 (lat? '())
 (lat? '(8))
