@@ -38,5 +38,5 @@
 (defun multirember (a lat)
   (cond
     ((null lat) nil)
-    ((eq (car lat) a) (cdr lat))
+    ((eq (car lat) a) (multirember a (cdr lat)))
     (t (cons (car lat) (multirember a (cdr lat))))))
