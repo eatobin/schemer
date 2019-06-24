@@ -34,3 +34,9 @@
     ((null lat) nil)
     ((or (eq (car lat) o1) (eq (car lat) o2)) (cons new (cdr lat)))
     (t (cons (car lat) (substCL2 new o1 o2 (cdr lat))))))
+
+(defun multirember (a lat)
+  (cond
+    ((null lat) nil)
+    ((eq (car lat) a) (cdr lat))
+    (t (cons (car lat) (multirember a (cdr lat))))))
