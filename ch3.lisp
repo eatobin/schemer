@@ -40,3 +40,9 @@
     ((null lat) nil)
     ((eq (car lat) a) (multirember a (cdr lat)))
     (t (cons (car lat) (multirember a (cdr lat))))))
+
+(defun multiinsertR (new old lat)
+  (cond
+    ((null lat) nil)
+    ((eq (car lat) old) (cons (car lat) (cons new (multiinsertR new old (cdr lat)))))
+    (t (cons (car lat) (multiinsertR new old (cdr lat))))))
