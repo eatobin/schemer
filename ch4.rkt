@@ -8,6 +8,17 @@
 (provide sub1)
 (provide o+)
 (provide o-)
+(provide addtup)
+(provide ox)
+(provide tup+)
+(provide o>)
+
+;; 4clojure experiment
+(define (flat l)
+  (cond
+   ((null? l) '())
+   ((atom? (car l)) (cons (car l) (flat (cdr l))))
+   (else (append (flat (car l)) (flat (cdr l))))))
 
 (define add1
   (lambda (n)
@@ -55,9 +66,3 @@
      ((zero? m) #t)
      ((zero? n) #f)
      (else (o> (sub1 n) (sub1 m))))))
-
-(define (flat l)
-  (cond
-   ((null? l) '())
-   ((atom? (car l)) (cons (car l) (flat (cdr l))))
-   (else (append (flat (car l)) (flat (cdr l))))))
