@@ -68,3 +68,9 @@
      ((null? lat) (quote ()))
      ((eq? (car lat) old) (cons new (multisubst new old (cdr lat))))
      (else (cons (car lat) (multisubst new old (cdr lat)))))))
+
+(define inters
+  (lambda (in lat)
+    (cond
+     ((null? lat) (quote ()))
+     (else (cons (car lat) (cons in (inters in (cdr lat))))))))
