@@ -1,8 +1,8 @@
 (define atom?
   (lambda (x)
     (and
-      (not (pair? x))
-      (not (null? x)))))
+     (not (pair? x))
+     (not (null? x)))))
 
 (define my-add
   (lambda (x)
