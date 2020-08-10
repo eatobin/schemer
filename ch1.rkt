@@ -1,4 +1,3 @@
-bad
 #lang racket
 
 (provide atom?)
