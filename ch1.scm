@@ -1,4 +1,3 @@
-add
 (define atom?
   (lambda (x)
     (and
