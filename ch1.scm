@@ -8,7 +8,7 @@
   (lambda (x)
     (+ x 99)))
 
-(atom? '())
-(atom? '(8))
-(atom? 8)
-(atom? '((8)))
+;; (atom? '())
+;; (atom? '(8))
+;; (atom? 8)
+;; (atom? '((8)))
