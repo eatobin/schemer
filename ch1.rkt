@@ -5,7 +5,11 @@
 (define (atom? x)
   (and (not (pair? x)) (not (null? x))))
 
-(atom? '())
-(atom? '(8))
-(atom? 8)
-(atom? '((8)))
+(define my-add
+  (lambda (x)
+    (+ x 99)))
+
+;; (atom? '())
+;; (atom? '(8))
+;; (atom? 8)
+;; (atom? '((8)))
