@@ -1,4 +1,4 @@
-(load (compile-file "ch2.lisp"))
+(load "ch2.lisp")
 
 (defun rember (a lat)
   (cond

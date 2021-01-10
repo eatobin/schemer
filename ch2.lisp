@@ -1,4 +1,4 @@
-(load (compile-file "ch1.lisp"))
+(load "ch1.lisp")
 
 (defun lat? (l)
   (cond
