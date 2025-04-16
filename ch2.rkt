@@ -18,6 +18,8 @@
       [(null? lat) #f]
       [else (or (eq? (car lat) a) (member? a (cdr lat)))])))
 
+(define my-add (lambda (x) (+ x 99)))
+
 (lat? '())
 (lat? '(8))
 (lat? '(8 (8)))
@@ -27,3 +29,4 @@
 (member? '#:x '(#:c #:b #:a))
 (member? 'dog '(cat dog))
 (member? 'dog '(cat dogg))
+(my-add 15)
