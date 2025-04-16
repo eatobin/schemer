@@ -3,13 +3,9 @@
 (provide atom?)
 
 (define (atom? x)
-  (and
-   (not (pair? x))
-   (not (null? x))))
+  (and (not (pair? x)) (not (null? x))))
 
-(define my-add
-  (lambda (x)
-    (+ x 99)))
+(define my-add (lambda (x) (+ x 99)))
 
 (atom? '())
 (atom? '(8))
